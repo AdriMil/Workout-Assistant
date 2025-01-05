@@ -1,0 +1,26 @@
+name: Build Executable
+
+on:
+  push:
+    branches:
+      - integ
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.12  # Change this to the Python version you are using
+    - run: pip install -r requirements.txt pyinstaller
+    - run: pyinstaller action.spec
+   
+
+    - name: Archive Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: TrainingAssistant
+        path: dist/TrainingAssistant.exe  # Replace with the actual name used in pyinstaller.spec
