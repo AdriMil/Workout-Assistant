@@ -5,7 +5,7 @@ import app.buttons as button
 
 #-------------------IHM-----------#
 def gui(root):
-    root.title("Musculation")
+    root.title("Workout Assistant")
 
 def init_button_state(state :str):
     """
