@@ -1,4 +1,4 @@
-# Office Assistant
+# Workout Assistant
 Minimalist interface for your sports sessions. 
 All operations are performed localy.
 
